@@ -11,13 +11,16 @@ let userList = {};
 
 form.addEventListener("submit", (event) => {
    event.preventDefault();
-   const newUser = {
-      text: input.value,
-   };
-   socket.emit("new-user", newUser);
-   currentPlayer = true;
-   input.value = "";
-   document.querySelector(".input-container").remove();
+
+   if (input.value.length < 10) {
+      const newUser = {
+         text: input.value,
+      };
+      socket.emit("new-user", newUser);
+      currentPlayer = true;
+      input.value = "";
+      document.querySelector(".input-container").remove();
+   }
 });
 
 
