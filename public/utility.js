@@ -6,7 +6,7 @@ export function createParentContainer(id) {
    return div;
 }
 
-export function createMousePointer(color) {
+export function createMousePointer() {
    const div = document.createElement("div");
    div.style.width = "30px";
    div.style.height = "30px";

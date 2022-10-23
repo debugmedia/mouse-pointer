@@ -27,7 +27,7 @@ socket.on("connect", () => {
       userList = users;
       for (const user in users) {
          const parentContainer = createParentContainer(users[user].id);
-         const mousePointer = createMousePointer(user[user].color);
+         const mousePointer = createMousePointer();
          const username = createUsername(users[user].text);
          parentContainer.appendChild(mousePointer);
          parentContainer.appendChild(username);
@@ -40,7 +40,7 @@ socket.on("new-user", (newUser) => {
    if (userList[newUser.id]) return;
    userList[newUser.id] = newUser;
    const parentContainer = createParentContainer(newUser.id);
-   const mousePointer = createMousePointer(newUser.color);
+   const mousePointer = createMousePointer();
    const username = createUsername(newUser.text);
    parentContainer.appendChild(mousePointer);
    parentContainer.appendChild(username);
