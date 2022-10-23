@@ -67,3 +67,10 @@ document.addEventListener("mousemove", (event) => {
       socket.emit("mousemmove", { x: event.clientX, y: event.clientY });
    }
 });
+
+
+document.addEventListener("touchmove", (event) => {
+   if (currentPlayer) {
+      socket.emit("mousemmove", { x: event.touches[0].clientX, y: event.touches[0].clientY });
+   }
+});
